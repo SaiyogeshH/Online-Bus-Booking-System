@@ -1,0 +1,61 @@
+ Online Bus Booking System
+DATABASE SCHEMA:
+
+create database onlinebus;
+use onlinebus;
+Admin Services:
+CREATE TABLE admin (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+Booking Services:
+CREATE TABLE booking (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    refnumber VARCHAR(255),
+    name VARCHAR(20),
+    quantity INT,
+    amount INT,
+    status VARCHAR(255)
+);
+
+Bus Services:
+CREATE TABLE bus (
+    bus_id INT AUTO_INCREMENT PRIMARY KEY,
+    number VARCHAR(20),
+    name VARCHAR(20)
+);
+
+Schedule Services:
+CREATE TABLE schedule (
+    schedule_id INT AUTO_INCREMENT PRIMARY KEY,
+    date DATE,
+    bus VARCHAR(255),
+    startingpoint VARCHAR(255),
+    destination VARCHAR(255),
+    time TIME,
+    etadate DATE,
+    etatime TIME,
+    availability INT,
+    price INT
+);
+
+Location Services:
+CREATE TABLE location (
+    loc_id INT AUTO_INCREMENT PRIMARY KEY,
+    terminal VARCHAR(20),
+    city VARCHAR(20),
+    state VARCHAR(20)
+);
+
+User services:
+CREATE TABLE user (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(20),
+    email VARCHAR(20),
+    password VARCHAR(20)
+);
